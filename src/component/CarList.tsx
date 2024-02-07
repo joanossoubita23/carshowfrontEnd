@@ -9,6 +9,8 @@ import { deleteCar, getCars } from "../carapi.ts";
 import { useState } from "react";
 import Confirmation from "./Confirmation.tsx";
 import AddCar from "./AddCar.tsx";
+import Edit from "./Edit.tsx";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 
 
@@ -50,7 +52,16 @@ const CarList = () => {
     {field: 'registerNumber', headerName: 'Reg.nr.', width: 150},
     {field: 'year', headerName: 'Year', width: 150},
     {field: 'price', headerName: 'Price', width: 150},
-    //Carlist.tsx
+    { field:'edit',
+    headerName:'',
+  width:90,
+ sortable:false,
+filterable:false,
+renderCell:(params:GridCellParams)=> 
+<Edit cardata={params.row} />
+},
+
+
 {
   field: "delete",
   headerName: "",
@@ -65,7 +76,7 @@ const CarList = () => {
     make:params.row.make,
   model:params.row.model
 }) }
-   >Delelte</Button>
+   >Delete</Button>
    <Confirmation 
    open={openConfirmation?.id===params.row.id} 
    make={openConfirmation?.make}
