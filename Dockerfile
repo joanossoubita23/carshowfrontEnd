@@ -2,7 +2,7 @@
 FROM node:14-alpine
 
 # Set the working directory in the container
-WORKDIR /Users/joanmelckioroyameossoubita/code/frontEnd24/carshow/src/App.tsx
+WORKDIR /usr/src/app
 
 # Clone your Git repository into the container
 RUN apk add --no-cache git
