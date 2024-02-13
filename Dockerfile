@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 # Clone your Git repository into the container
 RUN apk add --no-cache git
-RUN git clone <https://github.com/joanossoubita23/carshowfrontEnd.git> .
+RUN git clone https://github.com/joanossoubita23/carshowfrontEnd.git .
 
 # Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
