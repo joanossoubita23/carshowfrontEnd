@@ -26,3 +26,7 @@ export type carEntry={
   car:CarResponse;
   url:string;
 }
+export type User={
+  username:string,
+  password:string,
+}
